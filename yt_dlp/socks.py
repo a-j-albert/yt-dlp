@@ -10,7 +10,7 @@ import collections
 import socket
 import struct
 
-from .compat import compat_ord
+from compat import compat_ord
 
 __author__ = 'Timo Schmid <coding@timoschmid.de>'
 
