@@ -413,14 +413,14 @@ class HTMLBreakOnClosingTagParser(html.parser.HTMLParser):
         self.tagstack.append(tag)
 
     def handle_endtag(self, tag):
-        if not self.tagstack:
-            raise compat_HTMLParseError('no tags in the stack')
+        # if not self.tagstack:
+        #     raise compat_HTMLParseError('no tags in the stack')
         while self.tagstack:
             inner_tag = self.tagstack.pop()
             if inner_tag == tag:
                 break
-        else:
-            raise compat_HTMLParseError(f'matching opening tag for closing {tag} tag not found')
+        # else:
+        #     raise compat_HTMLParseError(f'matching opening tag for closing {tag} tag not found')
         if not self.tagstack:
             raise self.HTMLBreakOnClosingTagException
 
@@ -458,7 +458,7 @@ def get_element_text_and_html_by_tag(tag, html):
             except HTMLBreakOnClosingTagParser.HTMLBreakOnClosingTagException:
                 return html[content_start:offset + next_closing_tag_start], \
                     html[whole_start:offset + next_closing_tag_end]
-        raise compat_HTMLParseError('unexpected end of html')
+        # raise compat_HTMLParseError('unexpected end of html')
 
 
 class HTMLAttributeParser(html.parser.HTMLParser):
@@ -470,7 +470,7 @@ class HTMLAttributeParser(html.parser.HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         self.attrs = dict(attrs)
-        raise compat_HTMLParseError('done')
+        # raise compat_HTMLParseError('done')
 
 
 class HTMLListAttrsParser(html.parser.HTMLParser):
@@ -2800,10 +2800,10 @@ def js_to_json(code, vars={}, *, strict=False):
             else:
                 return vars[v]
 
-        if not strict:
-            return f'"{v}"'
+        # if not strict:
+        return f'"{v}"'
 
-        raise ValueError(f'Unknown value: {v}')
+        # raise ValueError(f'Unknown value: {v}')
 
     def create_map(mobj):
         return json.dumps(dict(json.loads(js_to_json(mobj.group(1) or '[]', vars=vars))))
