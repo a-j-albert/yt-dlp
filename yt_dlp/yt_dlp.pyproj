@@ -13,7 +13,7 @@
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <InterpreterId>CondaEnv|CondaEnv|py3130</InterpreterId>
     <IsWindowsApplication>False</IsWindowsApplication>
-    <CommandLineArguments>--newline -i -o F:\music\%(title)s-%(id)s-%(height)sp.%(ext)s --ignore-config --hls-prefer-native --ffmpeg-location C:\ffmpeg\auto-build-shared-20240813\bin\ffmpeg.exe --download-archive C:\Users\aalbe\AppData\Roaming\youtube-dlg\archive1.txt --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36" --playlist-items 1-2000 --encoding utf-8 --geo-verification-proxy 77.111.245.12:443 --format "bestvideo[height&lt;=4000]+bestaudio/best[height&lt;=4000]" --no-check-certificate --socket-timeout 10 --merge-output-format mkv --write-sub --sub-format srt --sub-lang en --write-auto-sub --embed-subs --add-metadata  --verbose --live-from-start --download-sections "*0:00:00-inf" --live-from-start https://www.youtube.com/watch?v=uLhAMGMBvaY</CommandLineArguments>
+    <CommandLineArguments>--newline -i -o F:\music\%(title)s-%(id)s-%(height)sp.%(ext)s --ignore-config --hls-prefer-native --ffmpeg-location C:\ffmpeg\auto-build-shared-20240813\bin\ffmpeg.exe --download-archive C:\Users\aalbe\AppData\Roaming\youtube-dlg\archive1.txt --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36" --playlist-items 1-2000 --encoding utf-8 --geo-verification-proxy 77.111.245.12:443 --format "bestvideo[height&lt;=4000]+bestaudio/best[height&lt;=4000]" --no-check-certificate --socket-timeout 10 --merge-output-format mkv --write-sub --sub-format srt --sub-lang en --write-auto-sub --embed-subs --add-metadata  --verbose --live-from-start --download-sections "*0:00:00-inf" --live-from-start https://www.youtube.com/watch?v=7YM8-d-D8gw&amp;t=6841s</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
     <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
   </PropertyGroup>
@@ -1041,6 +1041,25 @@
     <Compile Include="extractor\younow.py" />
     <Compile Include="extractor\youporn.py" />
     <Compile Include="extractor\youtube.py" />
+    <Compile Include="extractor\youtube\pot\cache.py" />
+    <Compile Include="extractor\youtube\pot\provider.py" />
+    <Compile Include="extractor\youtube\pot\utils.py" />
+    <Compile Include="extractor\youtube\pot\_builtin\memory_cache.py" />
+    <Compile Include="extractor\youtube\pot\_builtin\webpo_cachespec.py" />
+    <Compile Include="extractor\youtube\pot\_builtin\__init__.py" />
+    <Compile Include="extractor\youtube\pot\_director.py" />
+    <Compile Include="extractor\youtube\pot\_provider.py" />
+    <Compile Include="extractor\youtube\pot\_registry.py" />
+    <Compile Include="extractor\youtube\pot\__init__.py" />
+    <Compile Include="extractor\youtube\_base.py" />
+    <Compile Include="extractor\youtube\_clip.py" />
+    <Compile Include="extractor\youtube\_mistakes.py" />
+    <Compile Include="extractor\youtube\_notifications.py" />
+    <Compile Include="extractor\youtube\_redirect.py" />
+    <Compile Include="extractor\youtube\_search.py" />
+    <Compile Include="extractor\youtube\_tab.py" />
+    <Compile Include="extractor\youtube\_video.py" />
+    <Compile Include="extractor\youtube\__init__.py" />
     <Compile Include="extractor\zaiko.py" />
     <Compile Include="extractor\zapiks.py" />
     <Compile Include="extractor\zattoo.py" />
@@ -1103,6 +1122,12 @@
     <Folder Include="dependencies" />
     <Folder Include="downloader" />
     <Folder Include="extractor" />
+    <Folder Include="extractor\youtube\" />
+    <Folder Include="extractor\youtube\pot\" />
+    <Folder Include="extractor\youtube\pot\_builtin\" />
+    <Folder Include="extractor\youtube\pot\_builtin\__pycache__\" />
+    <Folder Include="extractor\youtube\pot\__pycache__\" />
+    <Folder Include="extractor\youtube\__pycache__\" />
     <Folder Include="networking" />
     <Folder Include="postprocessor" />
     <Folder Include="utils" />
@@ -1114,6 +1139,28 @@
     <InterpreterReference Include="CondaEnv|CondaEnv|py3120" />
     <InterpreterReference Include="CondaEnv|CondaEnv|py3125" />
     <InterpreterReference Include="CondaEnv|CondaEnv|py3130" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="extractor\youtube\pot\README.md" />
+    <Content Include="extractor\youtube\pot\_builtin\__pycache__\memory_cache.cpython-313.pyc" />
+    <Content Include="extractor\youtube\pot\_builtin\__pycache__\webpo_cachespec.cpython-313.pyc" />
+    <Content Include="extractor\youtube\pot\_builtin\__pycache__\__init__.cpython-313.pyc" />
+    <Content Include="extractor\youtube\pot\__pycache__\cache.cpython-313.pyc" />
+    <Content Include="extractor\youtube\pot\__pycache__\provider.cpython-313.pyc" />
+    <Content Include="extractor\youtube\pot\__pycache__\utils.cpython-313.pyc" />
+    <Content Include="extractor\youtube\pot\__pycache__\_director.cpython-313.pyc" />
+    <Content Include="extractor\youtube\pot\__pycache__\_provider.cpython-313.pyc" />
+    <Content Include="extractor\youtube\pot\__pycache__\_registry.cpython-313.pyc" />
+    <Content Include="extractor\youtube\pot\__pycache__\__init__.cpython-313.pyc" />
+    <Content Include="extractor\youtube\__pycache__\_base.cpython-313.pyc" />
+    <Content Include="extractor\youtube\__pycache__\_clip.cpython-313.pyc" />
+    <Content Include="extractor\youtube\__pycache__\_mistakes.cpython-313.pyc" />
+    <Content Include="extractor\youtube\__pycache__\_notifications.cpython-313.pyc" />
+    <Content Include="extractor\youtube\__pycache__\_redirect.cpython-313.pyc" />
+    <Content Include="extractor\youtube\__pycache__\_search.cpython-313.pyc" />
+    <Content Include="extractor\youtube\__pycache__\_tab.cpython-313.pyc" />
+    <Content Include="extractor\youtube\__pycache__\_video.cpython-313.pyc" />
+    <Content Include="extractor\youtube\__pycache__\__init__.cpython-313.pyc" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>
