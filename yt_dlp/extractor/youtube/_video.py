@@ -4423,6 +4423,6 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
         info['__post_extractor'] = self.extract_comments(webpage_ytcfg, video_id, contents, webpage)
 
         self.mark_watched(video_id, player_responses)
-        self._sort_formats(formats)
+        # self._sort_formats(formats)
 
         return info
