@@ -152,6 +152,8 @@ class PluginFinder(importlib.abc.MetaPathFinder):
         search_locations = list(map(str, self.search_locations(fullname)))
         if not search_locations:
             # Prevent using built-in meta finders for searching plugins.
+            print(f'find_spec - no search_locations for {fullname}, {path}, {target}')
+            return None
             raise ModuleNotFoundError(fullname)
 
         spec = importlib.machinery.ModuleSpec(fullname, PluginLoader(), is_package=True)
