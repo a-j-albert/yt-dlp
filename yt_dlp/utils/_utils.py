@@ -422,8 +422,8 @@ class HTMLBreakOnClosingTagParser(html.parser.HTMLParser):
                 break
         # else:
         #     raise compat_HTMLParseError(f'matching opening tag for closing {tag} tag not found')
-        if not self.tagstack:
-            raise self.HTMLBreakOnClosingTagException
+        # if not self.tagstack:
+        #     raise self.HTMLBreakOnClosingTagException
 
 
 # XXX: This should be far less strict
@@ -4795,6 +4795,7 @@ def supports_terminal_sequences(stream):
     elif not os.getenv('TERM'):
         return False
     try:
+        # write_string(f'Is a tty {stream.isatty()}')
         return stream.isatty()
     except BaseException:
         return False
