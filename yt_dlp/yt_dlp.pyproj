@@ -13,7 +13,7 @@
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <InterpreterId>CondaEnv|CondaEnv|py3130</InterpreterId>
     <IsWindowsApplication>False</IsWindowsApplication>
-    <CommandLineArguments>--newline -i -o I:\test1\videos\%(title)s-%(id)s-%(height)sp.%(ext)s --ignore-config --hls-prefer-native --ffmpeg-location C:\ffmpeg\bin\ffmpeg.exe --download-archive C:\Users\aalbe\AppData\Roaming\youtube-dlg\archive1.txt --playlist-items 1-2000 --encoding utf-8 --geo-verification-proxy 77.111.245.12:443 --format "bestvideo[height&lt;=4000]+bestaudio/best[height&lt;=4000]" --no-check-certificate --socket-timeout 10 --merge-output-format mkv --write-sub --sub-format srt --sub-lang en --write-auto-sub --embed-subs --add-metadata  --live-from-start https://www.youtube.com/watch?v=kh8R6ZQBLT8</CommandLineArguments>
+    <CommandLineArguments>--newline -i -o I:\test1\videos\%(title)s-%(id)s-%(height)sp.%(ext)s --ignore-config --hls-prefer-native --ffmpeg-location C:\ffmpeg\bin\ffmpeg.exe --download-archive C:\Users\aalbe\AppData\Roaming\youtube-dlg\archive1.txt --playlist-items 1-2000 --encoding utf-8 --geo-verification-proxy 77.111.245.12:443 --format "bestvideo[height&lt;=4000]+bestaudio/best[height&lt;=4000]" --no-check-certificate --remote-components ejs:github --socket-timeout 10 --merge-output-format mkv --write-sub --sub-format srt --sub-lang en --write-auto-sub --embed-subs --add-metadata  --live-from-start https://www.youtube.com/watch?v=J2_QfO905H8</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
     <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
   </PropertyGroup>
@@ -1040,6 +1040,18 @@
     <Compile Include="extractor\youku.py" />
     <Compile Include="extractor\younow.py" />
     <Compile Include="extractor\youporn.py" />
+    <Compile Include="extractor\youtube\jsc\provider.py" />
+    <Compile Include="extractor\youtube\jsc\_builtin\bun.py" />
+    <Compile Include="extractor\youtube\jsc\_builtin\deno.py" />
+    <Compile Include="extractor\youtube\jsc\_builtin\ejs.py" />
+    <Compile Include="extractor\youtube\jsc\_builtin\node.py" />
+    <Compile Include="extractor\youtube\jsc\_builtin\quickjs.py" />
+    <Compile Include="extractor\youtube\jsc\_builtin\vendor\_info.py" />
+    <Compile Include="extractor\youtube\jsc\_builtin\vendor\__init__.py" />
+    <Compile Include="extractor\youtube\jsc\_builtin\__init__.py" />
+    <Compile Include="extractor\youtube\jsc\_director.py" />
+    <Compile Include="extractor\youtube\jsc\_registry.py" />
+    <Compile Include="extractor\youtube\jsc\__init__.py" />
     <Compile Include="extractor\youtube\pot\cache.py" />
     <Compile Include="extractor\youtube\pot\provider.py" />
     <Compile Include="extractor\youtube\pot\utils.py" />
@@ -1122,6 +1134,12 @@
     <Folder Include="downloader" />
     <Folder Include="extractor" />
     <Folder Include="extractor\youtube\" />
+    <Folder Include="extractor\youtube\jsc\" />
+    <Folder Include="extractor\youtube\jsc\_builtin\" />
+    <Folder Include="extractor\youtube\jsc\_builtin\vendor\" />
+    <Folder Include="extractor\youtube\jsc\_builtin\vendor\__pycache__\" />
+    <Folder Include="extractor\youtube\jsc\_builtin\__pycache__\" />
+    <Folder Include="extractor\youtube\jsc\__pycache__\" />
     <Folder Include="extractor\youtube\pot\" />
     <Folder Include="extractor\youtube\pot\_builtin\" />
     <Folder Include="extractor\youtube\pot\_builtin\__pycache__\" />
@@ -1140,6 +1158,22 @@
     <InterpreterReference Include="CondaEnv|CondaEnv|py3130" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="extractor\youtube\jsc\README.md" />
+    <Content Include="extractor\youtube\jsc\_builtin\vendor\yt.solver.bun.lib.js" />
+    <Content Include="extractor\youtube\jsc\_builtin\vendor\yt.solver.core.js" />
+    <Content Include="extractor\youtube\jsc\_builtin\vendor\yt.solver.deno.lib.js" />
+    <Content Include="extractor\youtube\jsc\_builtin\vendor\__pycache__\_info.cpython-313.pyc" />
+    <Content Include="extractor\youtube\jsc\_builtin\vendor\__pycache__\__init__.cpython-313.pyc" />
+    <Content Include="extractor\youtube\jsc\_builtin\__pycache__\bun.cpython-313.pyc" />
+    <Content Include="extractor\youtube\jsc\_builtin\__pycache__\deno.cpython-313.pyc" />
+    <Content Include="extractor\youtube\jsc\_builtin\__pycache__\ejs.cpython-313.pyc" />
+    <Content Include="extractor\youtube\jsc\_builtin\__pycache__\node.cpython-313.pyc" />
+    <Content Include="extractor\youtube\jsc\_builtin\__pycache__\quickjs.cpython-313.pyc" />
+    <Content Include="extractor\youtube\jsc\_builtin\__pycache__\__init__.cpython-313.pyc" />
+    <Content Include="extractor\youtube\jsc\__pycache__\provider.cpython-313.pyc" />
+    <Content Include="extractor\youtube\jsc\__pycache__\_director.cpython-313.pyc" />
+    <Content Include="extractor\youtube\jsc\__pycache__\_registry.cpython-313.pyc" />
+    <Content Include="extractor\youtube\jsc\__pycache__\__init__.cpython-313.pyc" />
     <Content Include="extractor\youtube\pot\README.md" />
     <Content Include="extractor\youtube\pot\_builtin\__pycache__\memory_cache.cpython-313.pyc" />
     <Content Include="extractor\youtube\pot\_builtin\__pycache__\webpo_cachespec.cpython-313.pyc" />
