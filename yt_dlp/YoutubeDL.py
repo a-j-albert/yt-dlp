@@ -4032,7 +4032,9 @@ class YoutubeDL:
         if not table:
             self.to_screen(f'{video_id} has no {name}')
             return
+        # self.to_screen(f'[info] Available xxx {name} for {video_id}:')
         self.to_screen(f'[info] Available {name} for {video_id}:')
+        # breakpoint()
         self.to_stdout(table)
 
     def list_formats(self, info_dict):
